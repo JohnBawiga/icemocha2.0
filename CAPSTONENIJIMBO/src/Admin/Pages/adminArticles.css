@@ -1,0 +1,403 @@
+.notice{
+    text-align: center;
+    margin-top: 5rem;
+    font-size: 100px;
+}
+
+.article-linkad{
+    font-size: 20px;
+    background-color: #E1AC00;
+    border-radius: 20px;
+    padding: 7px;
+    color: #f9f9f9;
+  }
+
+.admin-articles{
+    display: grid;
+    grid-template-columns: repeat( 1fr);
+    gap: 3rem;
+    padding-bottom: 3rem;
+    margin-top: 2rem;
+    margin-left: 4rem ;
+    margin-right: 4rem;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.A-article{
+    background: #fff;;
+    padding: 1rem;
+    border-radius: 30px;
+    padding-bottom: 2rem;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+
+.A-article-content {
+    text-align: center;
+  }
+  
+  .A-article-content h3,
+  .A-article-content p:nth-of-type(2) {
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .A-article-description {
+    text-align: justify;
+  }
+  
+
+
+  .article-modal {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    overflow: auto;
+  }
+  
+  .article-modal-content {
+    background-color: #fefefe;
+    margin: 2% auto;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 80%;
+    overflow-y: auto;
+    position: relative;
+  }
+  
+  .article-closeButton {
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001; /* Ensure it's above modal content */
+  }
+  
+  .article-btntop {
+    position: absolute;
+    top: 10px;
+    right: 48px;
+  }
+  
+  .article-deletebtn,
+.article-editbtn {
+  border: none;
+  padding: 8px 16px; /* Adjust padding for better alignment */
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 10px;
+  font-size: 14px; /* Adjust font size for better alignment */
+}
+  
+  .article-deletebtn {
+    background-color: #ff0000;
+    color: #ffffff;
+    font-size: 16px;
+  }
+  
+  .article-editbtn {
+    background-color: #00ff00;
+    color: #ffffff;
+    font-size: 16px;
+  }
+  
+  .A-article-content h3 {
+    margin-bottom: 10px;
+  }
+  
+  .A-article-content p {
+    margin-bottom: 5px;
+  }
+  
+  .A-article-description {
+    text-align: justify;
+  }
+  
+  
+  
+
+  .article-edit-modal {
+    display: block;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .article-modal-content-edit {
+    background-color: #fefefe;
+    margin: 2% auto;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 900px;
+    text-align: center;
+  }
+  
+  .article-edit-closeButton {
+    position: relative;
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    margin-top: -1rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .article-closeButton:hover,
+  .article-closeButton:focus {
+    color: black;
+    text-decoration: none;
+  }
+  
+  .article-edittitle {
+    text-align: center;
+  }
+  
+  .inputs {
+    margin-top: 20px;
+  }
+  
+  .inputs h4 {
+    margin-bottom: 5px;
+  }
+  
+  .article-title {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .ql-editor {
+    min-height: 250px; /* Adjust the height as needed */
+  }
+
+  .article-savebtn {
+    border: none;
+    padding: 10px 20px;
+    margin-top: 1rem;
+    cursor: pointer;
+    border-radius: 30px;
+    background-color: #e1ac00;
+    color: #ffffff;
+    font-size: 16px;
+  }
+  
+  .article-savebtn:hover {
+    background-color: #d39e00;
+  }
+  
+
+
+
+  .article-delete-modal {
+    display: block;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .article-modal-content-delete {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 20px;
+    max-width: 500px;
+    overflow-y: auto;
+    position: relative;
+    text-align: center;
+  }
+  
+  .article-delete-closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #aaa;
+    font-size: 28px;
+    margin-top: -1rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .article-delete-closeButton:hover,
+  .article-delete-closeButton:focus {
+    color: black;
+    text-decoration: none;
+  }
+  
+  .article-deleteTitle {
+    text-align: center;
+  }
+  
+  .article-deleteOptions {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .article-confirmDelete,
+  .article-cancelDelete {
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 0 10px;
+  }
+  
+  .article-confirmDelete {
+    background-color: #ff0000;
+    color: #ffffff;
+  }
+  
+  .article-cancelDelete {
+    background-color: #ccc;
+  }
+  
+
+
+
+
+  .create-article {
+    margin: 30px auto;
+    max-width: 750px;
+  }
+  
+  .create-article-container {
+    background-color: #fefefe;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .create-article h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  .create-article-form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: .5rem;
+  }
+  
+  .create-article-form-row input[type="text"] {
+    flex: 3;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 350px;
+  }
+  
+  .create-article-form-row input[type="date"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 250px;
+    border-radius: 5px;
+  }
+  
+  .create-article-form-row input:focus {
+    outline: none;
+    border-color: #E1AC00;
+  }
+  
+  .create-article-form-row input::placeholder {
+    color: #999;
+  }
+  
+  .create-article-form-row input[type="submit"] {
+    background-color: #E1AC00;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .create-article-form-row input[type="submit"]:hover {
+    background-color: #E1AC00;
+  }
+  
+  .created-article-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .create-article-modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border-radius: 5px;
+    width: 350px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    text-align: center;
+    color: black;
+  }
+  
+  .created-article-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    margin-top: -10px;
+    font-size: 24px;
+    color: #999;
+  }
+  
+  .created-article-close:hover {
+    color: #555;
+  }
+  
+  .created-article-message {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+
+  .create-article-btn {
+    margin-top: 1rem;
+    background-color: #E1AC00;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .create-article-btn:hover {
+    background-color: #c5a53d;
+  }
+  
+
+
+  .create-article-description,
+  .edit-article-description {
+    max-height: 230px; /* Set the maximum height for the description */
+    overflow-y: auto; /* Enable vertical scrolling if content overflows */
+  }

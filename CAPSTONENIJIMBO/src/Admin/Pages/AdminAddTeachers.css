@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+
+.add-teacher-container {
+  margin-top: 3rem;
+  max-width: 700px;
+  width: 90%; /* Adjusted for responsiveness */
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 20px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  margin: 0 auto; /* Centered horizontally */
+  height: 530px;
+}
+.add-teacher-container .add-teacher-title{
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+
+.add-teacher-container form .add-teacher-user-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+form .add-teacher-user-details .add-teacher-input-box{
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+form .add-teacher-input-box span.add-teacher-details{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+.add-teacher-user-details .add-teacher-input-box input{
+  height: 32px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.add-teacher-user-details .add-teacher-input-box input:focus,
+.add-teacher-user-details .add-teacher-input-box input:valid{
+  border-color: #690202;
+}
+ form .add-teacher-gender-details .add-teacher-gender-title{
+  font-size: 20px;
+  font-weight: 500;
+ }
+ form .add-teacher-category{
+   display: flex;
+   width: 80%;
+   margin: 14px 0 ;
+   justify-content: space-between;
+ }
+ form .add-teacher-category label{
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+ }
+ form .add-teacher-category label .dot{
+  height: 18px;
+  width: 18px;
+  border-radius: 50px;
+  margin-right: 10px;
+  background: #d9d9d9;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+ #dot-1:checked ~ .add-teacher-category label .one,
+ #dot-2:checked ~ .add-teacher-category label .two,
+ #dot-3:checked ~ .add-teacher-category label .three{
+   background: #9b59b6;
+   border-color: #d9d9d9;
+ }
+ form input[type="radio"]{
+   display: none;
+ }
+ form .add-teacher-button{
+   height: 45px;
+   margin: 35px;
+   
+
+ }
+ form .add-teacher-button input{
+    border-radius: 20px;
+    width: 10rem;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    padding: 5px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+   background:  #690202;
+ }
+ form .add-teacher-button input:hover{
+  /* transform: scale(0.99); */
+  background: #793a3a;
+  }
+ @media(max-width: 584px){
+ .add-teacher-container{
+  max-width: 100%;
+}
+form .add-teacher-user-details .add-teacher-input-box{
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  form .add-teacher-category{
+    width: 100%;
+  }
+  .add-teacher-content form .add-teacher-user-details{
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .add-teacher-user-details::-webkit-scrollbar{
+    width: 5px;
+  }
+  }
+  @media(max-width: 459px){
+  .add-teacher-container .add-teacher-content .add-teacher-category{
+    flex-direction: column;
+  }
+}

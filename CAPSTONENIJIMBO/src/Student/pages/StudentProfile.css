@@ -1,0 +1,350 @@
+  .profile-heading {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .profile-details p {
+    margin: 10px 0;
+  }
+
+  .teachers-list p {
+    margin-bottom: 10px;
+  }
+
+  .teachers-list ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .teachers-list li {
+    margin-bottom: 5px;
+  } 
+
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  .modal {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 40%;
+    height: 70%;
+    left: 450px;
+    top: 50px;
+  }
+
+  .modal h3 {
+    margin-top: 0;
+  }
+
+  .modal button {
+    background-color: #007bff;
+    color: rgb(255, 255, 255);
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 120px;
+  }
+
+  .modal button:hover {
+    background-color: #0056b3;
+  }
+
+  .profile-details{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: #2196F3;
+    padding: 10px;
+    gap: 2rem;
+    padding-bottom: 3rem;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    margin-left: 250px;
+    margin-right: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+  }
+
+
+
+
+  .student-profile-picture {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+    /* Add margin-top to create space */
+  }
+
+  .profile {
+    margin-bottom: 20px;
+    /* Add margin bottom */
+    padding: 10px;
+    /* Add padding */
+  }
+
+  .file{
+    opacity: 0;
+    width: 0%;
+    height: 100%;
+    cursor: pointer;
+    top: 0;
+    margin-top: -1rem;
+  }
+
+  .change-picture-button { 
+    width: 50%;
+    padding: 8px 16px;
+    background-color: #E1AC00;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+  }
+
+  .change-picture-button:hover {
+    background-color: #755f15;
+  } 
+
+
+
+
+  .student-profile-credentials{
+    background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      text-shadow: #000000;
+      position: relative; 
+      color: #870000;
+      /* Add this to establish a positioning context */
+  }
+
+  .student-profile-credentials {
+    margin: 0; 
+    word-wrap: break-word;
+  }
+  .student-profile-credentials .entered-value {
+    font-size: 20px;
+    color: #010101;
+    /* Or any color you prefer */
+  }
+
+  .teachers-list {
+    margin-top: 10px; 
+  }
+
+  .teachers-list ul {
+    list-style-type: none; 
+    padding: 0;
+  }
+
+  .teachers-list li {
+    margin-bottom: 10px; 
+  }
+
+  .teachers-list select, .teachers-list button {
+    margin-top: 5px; 
+  }
+
+
+  .student-profile-btns button {
+    cursor: pointer;
+    background-color: #E1AC00;
+    /* Yellow background */
+    color: #000000;
+    /* Black text */
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+
+  .student-profile-btns button:hover {
+    background-color: #755f15;
+    /* Darker yellow on hover */
+  }
+
+  .profile{
+    width: 400px;
+    height: 500px;
+    align-content: center;
+    margin-left: 10%;
+  }
+
+  /* Update Picture Button */
+  .updatephoto {
+    cursor: pointer;
+    margin-top: 10px;
+    background-color: #E1AC00; /* Yellow background */
+    color: #000000; /* Black text */
+    padding: 8px 16px;
+    border: none;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+  }
+
+  .updatephoto:hover {
+    background-color: #755f15; /* Darker yellow on hover */
+  }
+
+
+  .student-profile h2 {
+    font-weight: bold;
+    font-size: 40px;
+    font-family: 'Helvetica';
+    text-shadow: 2px 2px 4px #939393fd;
+    color: #690202;
+  }
+
+  .choosefile {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.choosefile input[type="file"] {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+}
+
+/* Style for when the button is hovered */
+.choosefile:hover {
+  background-color: #0056b3;
+}
+
+
+
+  .QRbutton{
+      cursor: pointer;
+    background-color: #796afd;
+    position: relative;
+    color: #000000;
+    padding: 8px 16px;
+    border: 2px solid #3e00f9;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    top: 175px;
+    left: 245px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .closeQR{
+      background-color: #ff0000;
+      position: relative;
+      top: 20%;
+      right: 120px;
+  }
+  .QRcodeforStudentID {
+      font-weight: bold;
+      position: relative;
+      bottom: 170px;
+      left: 60px;
+  }
+
+  .logout-button {
+    cursor: pointer;
+    background-color: #e14000;
+    position: relative;
+    color: #000000;
+    padding: 8px 16px;
+    border: 2px solid #9e0000;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    top: 175px;
+    left: 260px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .logout-button:hover {
+    background-color: #ff671b;
+    /* Darker yellow on hover */
+  }
+.assign-section-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  /* Semi-transparent grey overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.assign-section-modal-overlay .modal {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  max-width: 20%;
+  height: 10%;
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+}
+.QRCode {
+  position: absolute;
+  left: 50%; /* relative to nearest positioned ancestor or body element */
+  top: 50%; /*  relative to nearest positioned ancestor or body element */
+  transform: translate(-50%, -50%);
+}
+.closeSection{
+  background-color: #ff0000;
+    position: relative;
+    bottom: 60px;
+    left: 30px;
+}
+
+.assign-sec {
+  cursor: pointer;
+    background-color: #5dff65;
+    position: relative;
+    color: #000000;
+    padding: 4px 8px;
+    border: 2px solid #0a9700;
+    left: 30px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.modal2 {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  width: 40%;
+  height: 70%;
+  left: 450px;
+  top: 50px;
+}

@@ -1,0 +1,79 @@
+
+
+.adminDashboards-category-item {
+    border: 5px solid #800000;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.adminDashboards-teachers-container ul li {
+    border: 5px solid #800000;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.adminDashboards-events-container ul li {
+    border: 5px solid #800000;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.adminDashboards-articles-container ul li {
+    border: 5px solid #800000;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+.adminDashboards-articles-container {
+    width: 32%;
+    float: left;
+    border: 10px solid #ccc;
+    padding: 16px;
+    margin: 16px 1.5% 16px 0; /* Adjusted margin */
+    border-radius: 4px;
+    overflow-y: auto;
+  }
+  
+  .adminDashboards-events-container {
+    width: 32%;
+    float: right;
+    border: 10px solid #ccc;
+    padding: 16px;
+    margin: 16px 0 16px 1.5%; /* Adjusted margin */
+    border-radius: 4px;
+    overflow-y: auto;
+  }
+  
+  .adminDashboards-teachers-container {
+    width: 32%;
+    border: 10px solid #ccc;
+    padding: 16px;
+    margin: 16px auto; /* Center horizontally */
+    border-radius: 4px;
+    overflow-y: auto;
+  }
+  
+  .adminDashboards-category-item:hover {
+    background-color: #f5f5f5; /* Change background color on hover */
+}
+
+/* Hover effect for .adminDashboards-teachers-container ul li */
+.adminDashboards-teachers-container ul li:hover {
+    background-color: #800000;
+    color: #f0f0f0  /* Change background color on hover */
+}
+
+/* Hover effect for .adminDashboards-events-container ul li */
+.adminDashboards-events-container ul li:hover {
+    background-color: #800000;
+    color: #f0f0f0  /* Change background color on hover */
+}
+
+/* Hover effect for .adminDashboards-articles-container ul li */
+.adminDashboards-articles-container ul li:hover {
+    background-color: #800000;
+    color: #f0f0f0 /* Change background color on hover */
+}

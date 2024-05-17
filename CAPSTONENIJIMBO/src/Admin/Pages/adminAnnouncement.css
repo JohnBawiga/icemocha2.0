@@ -1,0 +1,473 @@
+/* .create-announcement {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .create-announcement-container {
+    width: 50rem;
+    margin-top: -5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .create-announcement_form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .create-announcement_form .form-row {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center; 
+    margin-top: 2rem;
+  }
+  
+  .create-announcement_form .form-row input[type="text"] {
+    flex: 2;
+    width: 405px;
+    height: 2.5rem;
+    text-align: center;
+  }
+  
+  .create-announcement_form .form-row input[type="date"] {
+    flex: 1;
+    width: 200px;
+    height: 2.5rem;
+    cursor: pointer;
+    text-align: center;
+    align-items: center;
+  }
+
+
+  .ql-editor {
+    overflow: scroll;
+    background: white;
+    height: 10rem !important;
+    width: 100%;
+  }
+   */
+
+   .linkad{
+    font-size: 20px;
+    background-color: #E1AC00;
+    border-radius: 20px;
+    padding: 7px;
+    color: #f9f9f9;
+  }
+
+   .admin-announcements{
+    display: grid;
+    grid-template-columns: repeat( 1fr);
+    gap: 3rem;
+    padding-bottom: 3rem;
+    margin-top: 2rem;
+    margin-left: 4rem ;
+    margin-right: 4rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .announcement{
+    background: var(--color-white);
+    padding: 1rem;
+    border-radius: var(--radius-4);
+    padding-bottom: 2rem;
+    transition: var(--transition);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    cursor: pointer;
+  }
+  
+  .announcement-image{
+    border-radius: var(--radius-3);
+    overflow: hidden;
+    height: 25rem;
+  }
+  
+  .announcement-content{
+    margin-top: .5rem;
+  }
+
+  .announcement-modal{
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    overflow: auto;
+  }
+
+  .admin-announcement-modal {
+    background-color: #fefefe;
+    margin: 2% auto;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 80%;
+    overflow-y: auto;
+    position: relative;
+  }
+  
+  .admin-announcement-modal-content {
+    text-align: center;
+  }
+  
+  .admin-announcement-closeButton {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 24px;
+    color: black;
+  }
+  
+  .admin-announcement-btntop {
+    position: absolute;
+    top: 10px;
+    right: 48px;
+  }
+  
+  .admin-announcement-deletebtn,
+  .admin-announcement-editbtn {
+    border: none;
+    padding: 8px 16px; /* Adjust padding for better alignment */
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 10px;
+    font-size: 14px; /* Adjust font size for better alignment */
+  }
+  
+  .admin-announcement-image {
+    width: 1026px; /* Adjust the width as needed */
+    height: 450px; /* Adjust the height as needed */
+    overflow: hidden;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .admin-announcement-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .admin-announcement-content {
+    margin: 2% 2%;
+
+    text-align: center;
+  }
+  
+  .admin-announcement-content h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .admin-announcement-content p {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  
+
+
+
+
+
+
+  .edit-modal{
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    overflow: auto;
+  }
+  .announcement-edit-modal {
+    background-color: #fefefe;
+    margin: 2% auto;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 900px;
+    text-align: center;
+  }
+  
+  .announcement-edit-closeButton {
+    position: relative;
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    margin-top: -1rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .announcement-edit-title {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .announcement-edit-modal-content {
+    text-align: center;
+  }
+  
+  .announcement-edit-inputs {
+    max-width: 600px; /* Adjust the maximum width as needed */
+    margin: 0 auto; /* Center the inputs horizontally */
+  }
+  
+  .announcement-edit-inputs h4 {
+    margin-bottom: 5px;
+  }
+  
+  .announcement-edit-anntitle {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  .ql-editor {
+    min-height: 250px; /* Adjust the height as needed */
+  }
+  
+  .announcement-edit-savebtn {
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #E1AC00;
+    color: #ffffff;
+    font-size: 16px;
+  }
+  
+  .announcement-edit-addfile {
+    margin-bottom: 15px;
+  }
+  
+  .announcement-edit-addfile input[type="file"] {
+    display: none;
+  }
+  
+
+
+  .create-announcement-description,
+  .edit-announcement-description {
+    max-height: 230px; /* Set the maximum height for the description */
+    overflow-y: auto; /* Enable vertical scrolling if content overflows */
+  }
+  
+
+
+
+
+
+  .announcement-delete-modal {
+    display: block;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .announcement-delete-modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 20px;
+    max-width: 500px;
+    overflow-y: auto;
+    position: relative;
+    text-align: center;
+  }
+  
+  .announcement-delete-closeButton{
+    position: absolute;
+    top: 14px;
+    right: 15px;
+    color: #aaa;
+    font-size: 28px;
+    margin-top: -1rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .announcement-delete-closeButton:hover,
+  .announcement-delete-closeButton:focus {
+    color: black;
+    text-decoration: none;
+  }
+  
+  .announcement-deleteTitle {
+    text-align: center;
+  }
+  
+  .announcement-deleteOptions {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .announcement-confirmDelete,
+  .announcement-cancelDelete {
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 0 10px;
+  }
+  
+  .announcement-confirmDelete {
+    background-color: #ff0000;
+    color: #ffffff;
+  }
+  
+  .announcement-cancelDelete {
+    background-color: #ccc;
+  }
+
+
+
+
+
+
+  .create-announcement {
+    margin: 30px auto;
+    max-width: 750px;
+  }
+  
+  .create-announcement-container {
+    background-color: #fefefe;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .create-announcement h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  .create-announcement-form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: .5rem;
+  }
+  
+  .create-announcement-form-row input[type="text"] {
+    flex: 3;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 350px;
+  }
+  
+  .create-announcement-form-row input[type="date"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 250px;
+    border-radius: 5px;
+  }
+  
+  .create-announcement-form-row input:focus {
+    outline: none;
+    border-color: #E1AC00;
+  }
+  
+  .create-announcement-form-row input::placeholder {
+    color: #999;
+  }
+  
+  .create-announcement-form-row input[type="submit"] {
+    background-color: #E1AC00;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .create-announcement-form-row input[type="submit"]:hover {
+    background-color: #E1AC00;
+  }
+  
+  .created-announcement-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .create-announcement-modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border-radius: 5px;
+    width: 350px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    text-align: center;
+    color: black;
+  }
+  
+  .created-announcement-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    margin-top: -10px;
+    font-size: 24px;
+    color: #999;
+  }
+  
+  .created-announcement-close:hover {
+    color: #555;
+  }
+  
+  .created-announcement-message {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+
+  .create-announcement-btn {
+    margin-top: 1rem;
+    background-color: #E1AC00;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .create-announcement-btn:hover {
+    background-color: #c5a53d;
+  }
+
+  .create-announcement-add-img{
+    display: block;
+  width: 625px; /* Adjust width as needed */
+  height: 40px; /* Adjust height as needed */
+  margin: 0 auto; /* Center horizontally */
+  margin-top: 20px; /* Adjust top margin as needed */
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
+  background-color: #fff;
+  cursor: pointer;
+  outline: none; /* Remove default focus outline */
+  }
