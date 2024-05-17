@@ -53,7 +53,7 @@ const TeacherEvents = () => {
                             <td>{event.event.eventTitle}</td>
                             <td>{event.event.eventStart}</td>
                             <td>{event.event.eventEnd}</td>
-                            <td dangerouslySetInnerHTML={{ __html: event.event.description }}></td>
+                            <td dangerouslySetInnerHTML={{ __html: event.event.description.length > 100 ? `${event.event.description.substring(0, 100)}...` : event.event.description }}></td>
                             <td>
                                 {/* Link to TeacherAttendance with teacherID and eventID */}
                                 <Link to={`/Teacher/Attendance/${teacherID}/${event.event.eventID}`}>

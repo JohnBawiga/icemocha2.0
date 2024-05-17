@@ -31,15 +31,15 @@ const AdminEventContent = () => {
 
   const handleDeleteSection = async (sectionId) => {
     try {
-        const response = await axios.delete(`http://localhost:8080/deleteeventsection/${selectedEventId}/${sectionId}`);
-        console.log('Section deleted:', response.data);
-        // Refresh the event sections after deletion
-setEventSections(eventSections.filter(section => section.section.id !== sectionId));        
-alert ('Section removed from event successfully');
+      const response = await axios.delete(`http://localhost:8080/deleteeventsection/${selectedEventId}/${sectionId}`);
+      console.log('Section deleted:', response.data);
+      // Refresh the event sections after deletion
+      setEventSections(eventSections.filter(section => section.section.id !== sectionId));
+      alert('Section removed from event successfully');
     } catch (error) {
-        console.error('Error deleting section:', error);
+      console.error('Error deleting section:', error);
     }
-};
+  };
   const fetchSections = async () => {
     try {
       const response = await axios.get('http://localhost:8080/getAllSections');
@@ -60,6 +60,8 @@ alert ('Section removed from event successfully');
       setShowSectionsModalOpen(true); 
     }
   };
+
+
   const formatDateForInput = (dateString) => {
     const date = new Date(dateString);
     const year = date.getFullYear();
@@ -193,32 +195,38 @@ alert ('Section removed from event successfully');
   };
   const handleAddSection = async () => {
     try {
-        const newSection = {
-            event: {
-                eventID: selectedEventId,
-                eventTitle: '', // Add event title if required
-                eventStart: '', // Add event start date if required
-                eventEnd: '', // Add event end date if required
-                image: '', // Add event image if required
-                description: '' // Add event description if required
-            },
-            section: {
-                id: selectedSectionId, // Provide the section ID
-                sectionName: '' // Provide the section name
-            }
-        };
+      if (!selectedSectionId) {
+        console.error('Selected section ID is null');
+        return; // Exit if selectedSectionId is null
+      }
+      const newSection = {
+        event: {
+          eventID: selectedEventId,
+          eventTitle: '', // Add event title if required
+          eventStart: '', // Add event start date if required
+          eventEnd: '', // Add event end date if required
+          image: '', // Add event image if required
+          description: '' // Add event description if required
+        },
+        section: {
+          id: selectedSectionId, // Provide the section ID
+          sectionName: '' // Provide the section name
+        }
+      };
 
-        const response = await axios.post('http://localhost:8080/eventsection', newSection);
-    console.log('Section added:', response.data);
-    setEventSections([...eventSections, response.data]);
-    alert('Section Added to Event Successfully');
-    setAddSectionModalOpen(false);
-    // Optionally, refresh event sections or handle success state
-  } catch (error) {
-    console.error('Error adding section:', error);
-    // Handle error or show error message to the user
-  }
-};
+      const response = await axios.post('http://localhost:8080/eventsection', newSection);
+      console.log('Section added:', response.data);
+      setEventSections([...eventSections, response.data]);
+      alert('Section Added to Event Successfully');
+      setAddSectionModalOpen(false);
+      setSelectedSectionId(null); // Reset selectedSectionId after adding
+      // Optionally, refresh event sections or handle success state
+    } catch (error) {
+      console.error('Error adding section:', error);
+      // Handle error or show error message to the user
+    }
+  };
+
   const handleOpenQrModal = () => {
     setEventDetailsModalOpen(false);
     setModalIsOpen(true);
@@ -248,9 +256,12 @@ alert ('Section removed from event successfully');
   };
   const filteredSections = allSections.filter(
     section => !eventSections.some(eventSection => eventSection.section.id === section.id)
+
 );
   return (
     <section>
+       {console.log('Filtered sections:', filteredSections)}
+      {console.log('Selected section ID:', selectedSectionId)}
       <div className="admin-events">
         <ul>
           {events.slice().reverse().map(event => (
@@ -434,6 +445,7 @@ alert ('Section removed from event successfully');
           value={selectedSectionId}
           onChange={(e) => setSelectedSectionId(e.target.value)}
         >
+           <option value="">...</option>  
             {filteredSections.map(section => (
                             <option key={section.id} value={section.id}>
                                 {section.sectionName}
