@@ -24,4 +24,7 @@ public class SectionService {
     public SectionEntity createSection(SectionEntity section) {
         return sectionRepository.save(section);
     }
+    public void deleteSectionById(Long id) {
+        sectionRepository.deleteById(id);
+    }
 }

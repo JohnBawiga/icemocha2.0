@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './AdminTeachers.css';
 import { useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus, faUserXmark } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faUserXmark, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 function AdminTeachers() {
     const [teachers, setTeachers] = useState([]);
@@ -57,6 +57,23 @@ function AdminTeachers() {
             });
     };
 
+  
+
+    const deleteSection = async (sectionId) => {
+        try {
+            await axios.delete(`http://localhost:8080/deleteteachersection/${sectionId}`);
+            await axios.delete(`http://localhost:8080/deletestudentsection/${sectionId}`);
+            await axios.delete(`http://localhost:8080/deleteeventsection/${sectionId}`)
+            await axios.delete(`http://localhost:8080/deletesection/${sectionId}`);
+            setSections(sections.filter(section => section.id !== sectionId));
+            alert("Section deleted successfully.");
+        } catch (error) {
+            console.error('Error deleting section:', error);
+            setModalMessage("An error occurred while deleting the section. Please try again.");
+            setModalError(true);
+        }
+    };
+
     const handleTeacherClick = (teacher) => {
         setSelectedTeacher(teacher);
         setSelectedSection(null);
@@ -98,19 +115,30 @@ function AdminTeachers() {
 return (
     <div className="AT-container">
     <div class="AT-S-container">
-    <div class="AT-S-table-container">
+    <div className="AT-S-table-container">
         <div class="AT-S-header">
             <h1>List of Sections</h1>
             <a href={`/Admin/AddSection/${adminID}`}><FontAwesomeIcon icon={faPlus} /></a>
         </div>
         <table>
-            <tbody>
-                {sections.map(section => (
-                    <tr key={section.id} onClick={() => handleSectionClick(section.id)}>
-                        <td>{section.sectionName}</td>
-                    </tr>
-                ))}
-            </tbody>
+        <tbody>
+    {sections.map(section => (
+        <tr key={section.id} onClick={() => handleSectionClick(section.id)}>
+             <td className="teacher-table-cell"> 
+            <div className="teacher-info">
+                <span>
+            <td >{section.sectionName}</td>
+            </span>
+            <div className="delete-teacher-button-container">
+                <button className="delete-Teacher" onClick={(e) => { e.stopPropagation(); deleteSection(section.id) }} style={{ background: 'transparent', border: 'none', padding: '0 5px'}}>
+                <FontAwesomeIcon icon={faTrash} style={{ color: '#690202' }}/>
+                </button>
+                </div>
+                </div>
+            </td>
+        </tr>
+    ))}
+</tbody>
         </table>
     </div>
 </div>

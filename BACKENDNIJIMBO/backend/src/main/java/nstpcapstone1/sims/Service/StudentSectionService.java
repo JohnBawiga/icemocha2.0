@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import jakarta.transaction.Transactional;
 import nstpcapstone1.sims.Entity.StudentSectionEntity;
 import nstpcapstone1.sims.Repository.StudentSectionRepository;
 
@@ -24,4 +25,9 @@ public class StudentSectionService {
 	public List<StudentSectionEntity> getAllStudentSections() {
 	    return studentSectionRepository.findAll();
 	}
+	 @Transactional
+	 public boolean deleteBySectionId(Long id) {
+	        int deleted = studentSectionRepository.deleteBySectionId(id);
+	        return deleted > 0;
+	    }
 }

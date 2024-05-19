@@ -82,4 +82,9 @@ public class EventSectionController {
 	        EventSectionEntity createdEventSection = eventSectionService.createEventSection(eventSectionEntity);
 	        return new ResponseEntity<>(createdEventSection, HttpStatus.CREATED);
 	    }
+	 @DeleteMapping("/deleteeventsection/{id}")
+	    public ResponseEntity<String> deleteBySectionId(@PathVariable Long id) {
+	        eventSectionService.deleteBySectionId(id);
+	        return ResponseEntity.noContent().build();
+	    }
 }

@@ -47,4 +47,9 @@ public class SectionController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+    @DeleteMapping("/deletesection/{id}")
+    public ResponseEntity<Void> deleteSectionById(@PathVariable Long id) {
+        sectionService.deleteSectionById(id);
+        return ResponseEntity.noContent().build();
+    }
 }

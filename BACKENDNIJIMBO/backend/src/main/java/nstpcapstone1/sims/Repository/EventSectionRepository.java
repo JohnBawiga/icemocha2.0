@@ -23,4 +23,9 @@ public interface EventSectionRepository extends JpaRepository<EventSectionEntity
     @Transactional
     @Query("DELETE FROM EventSectionEntity es WHERE es.event.id = :eventId AND es.section.id = :sectionId")
     int deleteByEventIdAndSectionId(Long eventId, Long sectionId);
+    
+    @Modifying
+    @Transactional
+    @Query("DELETE FROM EventSectionEntity es WHERE es.section.id = :id")
+   int deleteBySectionId(Long id);
 }

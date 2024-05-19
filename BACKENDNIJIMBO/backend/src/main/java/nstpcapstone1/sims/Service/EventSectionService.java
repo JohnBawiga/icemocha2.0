@@ -47,5 +47,10 @@ public class EventSectionService {
 	        // Save the EventSectionEntity
 	        return eventSectionRepository.save(eventSectionEntity);
 	    }
-	  
+	 
+	 @Transactional
+	 public boolean deleteBySectionId(Long id) {
+	        int deleted = eventSectionRepository.deleteBySectionId(id);
+	        return deleted > 0;
+	    }
 }

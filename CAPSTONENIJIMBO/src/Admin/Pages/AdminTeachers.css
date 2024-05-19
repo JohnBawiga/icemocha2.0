@@ -56,7 +56,6 @@ table {
 
 th,
 td {
-    padding: 10px; 
     text-align: left; 
     border-bottom: 1px solid #ddd; 
 }
@@ -101,6 +100,12 @@ tr:hover {
     background: transparent;
     border: none;
     padding: 0 5px;
+}
+
+.delete-Section{
+  background: transparent;
+  border: none;
+  padding: 0 5px;
 }
 
 
